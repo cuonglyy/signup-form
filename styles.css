@@ -1,5 +1,17 @@
 :root {
- --legend-font-size: 10px; /* Change later*/
+  /* Width size of left and right side of page */
+  --image-sidebar-width: 35vw;
+  --rightside-width: calc(100vw - var(--image-sidebar-width));
+
+  /* Height size of right side of form */
+  --topbottom-height: 35vh;
+  --middle-height: calc(100vh - calc(2 * var(--topbottom-height)))
+
+  /* Form */
+  --legend-font-size: 10px; /* Change later */
+
+
+  --form-background-color: white; /* Change later */
 }
 
 @font-face {
@@ -33,7 +45,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
-  width: 35vw;
+  width: var(--image-sidebar-width);
   height: auto;
 }
 
@@ -45,7 +57,7 @@
   align-items: center;
   gap: 5px;
   padding: 10px;
-  top: 17rem;
+  top: 18rem;
 }
 
 .odin {
@@ -70,4 +82,67 @@
   text-align: center;
   width: inherit;
   padding-bottom: 10px;
+}
+
+/* Right side of form */
+
+#rightside {
+  display: flex;
+  flex-flow: column wrap;
+  width: var(--rightside-width);
+  background-color: rgba(0, 0, 0, 0.05)
+}
+
+.dummy-text {
+  display: inherit;
+  flex-flow: inherit;
+  height: var(--topbottom-height);
+  font-size: 32px;
+  margin-bottom: 50px;
+}
+
+.dummy-text  p {
+  position: relative;
+  top: 225px;
+  left: 45px;
+  width: clamp(45ch, 70%, 75ch);
+}
+
+.dummy-text > p + p + p {
+  margin-top: 30px;
+}
+
+form {
+  display: flex;
+  flex-flow: row wrap;
+  column-gap: 200px;
+  row-gap: 30px;
+  padding: 35px 250px 50px 50px;
+  align-content: flex-start;
+  background-color: var(--form-background-color);
+  box-shadow: 1px 5px 5px 0px #cfcece;
+}
+
+#form-title {
+  width: 100%;
+  font-size: 32px;
+}
+
+form input {
+  height: 30px;
+  width: 250px;
+  font-size: 18px;
+  padding: 8px;
+}
+
+.input {
+  display: flex;
+  flex-flow: column wrap;
+}
+
+label {
+  font-size: 14px;
+  color: rgb(62, 62, 62);
+  font-family: sans-serif;
+  letter-spacing: 1.5px;
 }
