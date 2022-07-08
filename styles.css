@@ -5,13 +5,21 @@
 
   /* Height size of right side of form */
   --topbottom-height: 35vh;
-  --middle-height: calc(100vh - calc(2 * var(--topbottom-height)))
+  --middle-height: calc(100vh - calc(2 * var(--topbottom-height)));
 
-  /* Form */
-  --legend-font-size: 10px; /* Change later */
+  --form-background-color: white;
+  --top-bottom-basis: 29vh;
+}
 
-
-  --form-background-color: white; /* Change later */
+/* Removes browsers default styling */
+button, input[type="submit"], input[type="reset"] {
+	background: none;
+	color: inherit;
+	border: none;
+	padding: 0;
+	font: inherit;
+	cursor: pointer;
+	outline: inherit;
 }
 
 @font-face {
@@ -57,18 +65,18 @@
   align-items: center;
   gap: 5px;
   padding: 10px;
-  top: 18rem;
+  top: 13rem;
 }
 
 .odin {
-  width: 125px;
+  width: 110px;
 }
 
 .icon > h1 {
   position: inherit;
   top: 15px;
   color: white;
-  font-size: 125px;
+  font-size: 110px;
 }
 
 #footer-credit,
@@ -90,21 +98,17 @@
   display: flex;
   flex-flow: column wrap;
   width: var(--rightside-width);
-  background-color: rgba(0, 0, 0, 0.05)
+  background-color: rgba(0, 0, 0, 0.05);
 }
 
 .dummy-text {
   display: inherit;
   flex-flow: inherit;
-  height: var(--topbottom-height);
-  font-size: 32px;
-  margin-bottom: 50px;
+  font-size: 24px;
+  margin: 150px 50px 75px 60px;
 }
 
 .dummy-text  p {
-  position: relative;
-  top: 225px;
-  left: 45px;
   width: clamp(45ch, 70%, 75ch);
 }
 
@@ -115,9 +119,8 @@
 form {
   display: flex;
   flex-flow: row wrap;
-  column-gap: 200px;
   row-gap: 30px;
-  padding: 35px 250px 50px 50px;
+  padding: 25px 50px 50px 50px;
   align-content: flex-start;
   background-color: var(--form-background-color);
   box-shadow: 1px 5px 5px 0px #cfcece;
@@ -125,24 +128,41 @@ form {
 
 #form-title {
   width: 100%;
-  font-size: 32px;
+  font-size: 28px;
 }
 
 form input {
-  height: 30px;
+  height: 32px;
   width: 250px;
-  font-size: 18px;
+  font-size: 16px;
   padding: 8px;
+  border: 1px solid #E5E7EB;
+  border-radius: 5px;
+}
+
+form input:focus {
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 10%);
+}
+
+form input:invalid {
+  border: 1px solid red;
 }
 
 .input {
   display: flex;
+  flex: 0 1 410px;
   flex-flow: column wrap;
 }
 
 label {
-  font-size: 14px;
+  font-size: 12px;
   color: rgb(62, 62, 62);
   font-family: sans-serif;
   letter-spacing: 1.5px;
+}
+
+#button-side {
+  display: flex;
+  flex-direction: column;
+  flex-basis: var(--top-bottom-basis);
 }
