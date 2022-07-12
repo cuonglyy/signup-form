@@ -5,6 +5,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
   <title>Sign Up Form</title>
 </head>
 <body>
@@ -27,41 +28,44 @@
       </div>
 
       <form action="#">
-        <p id="form-title">Let's do this!</p>
+        <div id="input-side">
+          <p id="form-title">Let's do this!</p>
 
-        <div class="input">
-          <label for="first_name">FIRST NAME</label>
-          <input type="text" name="first_name" id="first_name">
-        </div>
+          <div class="input">
+            <label for="first_name">FIRST NAME</label>
+            <input type="text" name="first_name" id="first_name">
+          </div>
 
-        <div class="input">
-          <label for="last_name">LAST NAME</label>
-          <input type="text" name="last_name" id="last_name">
-        </div>
+          <div class="input">
+            <label for="last_name">LAST NAME</label>
+            <input type="text" name="last_name" id="last_name">
+          </div>
 
-        <div class="input">
-          <label for="email">EMAIL</label>
-          <input type="email" name="email" id="email">
-        </div>
+          <div class="input">
+            <label for="email">EMAIL</label>
+            <input type="email" name="email" id="email">
+          </div>
 
-        <div class="input">
-          <label for="phone_num">PHONE NUMBER</label>
-          <input type="tel" name="phone_number" id="phone_num" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Ex. 123-456-7890">
-        </div>
+          <div class="input">
+            <label for="phone_num">PHONE NUMBER</label>
+            <input type="tel" name="phone_number" id="phone_num" pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}" placeholder="Ex. 123-456-7890">
+          </div>
 
-        <div class="input">
-          <label for="password">PASSWORD</label>
-          <input type="password" name="password" id="password" required>
-        </div>
+          <div class="input">
+            <label for="password">PASSWORD</label>
+            <input type="password" name="password" id="password" required>
+            <div class="password-error"></div>
+          </div>
 
-        <div class="input">
-          <label for="confirm_password">CONFIRM PASSWORD</label>
-          <input type="password" name="confirm_password" id="confirm_password" required>
+          <div class="input">
+            <label for="confirm_password">CONFIRM PASSWORD</label>
+            <input type="password" name="confirm_password" id="confirm_password" required>
+          </div>
         </div>
+        <button type="submit" class="create-acc">Create Account</button>
       </form>
-
-      <div id="button-side">
-        <button>Create Account</button>
+      <div id="log-in">
+        <p>Already have an account? <a href="">Log in</a></p>
       </div>
     </div>
   </div>

@@ -3,12 +3,8 @@
   --image-sidebar-width: 35vw;
   --rightside-width: calc(100vw - var(--image-sidebar-width));
 
-  /* Height size of right side of form */
-  --topbottom-height: 35vh;
-  --middle-height: calc(100vh - calc(2 * var(--topbottom-height)));
-
   --form-background-color: white;
-  --top-bottom-basis: 29vh;
+  --right-side-leftspace: 50px;
 }
 
 /* Removes browsers default styling */
@@ -81,7 +77,7 @@ button, input[type="submit"], input[type="reset"] {
 
 #footer-credit,
 #footer-credit > p > a {
-  color: white;
+  color: rgb(196, 196, 196);
 }
 
 #footer-credit {
@@ -90,6 +86,7 @@ button, input[type="submit"], input[type="reset"] {
   text-align: center;
   width: inherit;
   padding-bottom: 10px;
+  color: rgb(196, 196, 196);
 }
 
 /* Right side of form */
@@ -99,13 +96,14 @@ button, input[type="submit"], input[type="reset"] {
   flex-flow: column wrap;
   width: var(--rightside-width);
   background-color: rgba(0, 0, 0, 0.05);
+  justify-content: center;
 }
 
 .dummy-text {
   display: inherit;
   flex-flow: inherit;
   font-size: 24px;
-  margin: 150px 50px 75px 60px;
+  padding: 0px 0px 75px var(--right-side-leftspace);
 }
 
 .dummy-text  p {
@@ -116,7 +114,7 @@ button, input[type="submit"], input[type="reset"] {
   margin-top: 30px;
 }
 
-form {
+#input-side {
   display: flex;
   flex-flow: row wrap;
   row-gap: 30px;
@@ -131,7 +129,7 @@ form {
   font-size: 28px;
 }
 
-form input {
+#input-side input {
   height: 32px;
   width: 250px;
   font-size: 16px;
@@ -140,11 +138,12 @@ form input {
   border-radius: 5px;
 }
 
-form input:focus {
+#input-side input:focus {
   box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 10%);
 }
 
-form input:invalid {
+#input-side input:invalid,
+.error {
   border: 1px solid red;
 }
 
@@ -161,8 +160,31 @@ label {
   letter-spacing: 1.5px;
 }
 
-#button-side {
-  display: flex;
-  flex-direction: column;
-  flex-basis: var(--top-bottom-basis);
+.password-error {
+  height: 12px;
+  width: 250px;
+  color: red;
+  font-size: 12px;
+}
+
+.create-acc {
+  background-color: #596D48;
+  border-radius: 12px;
+  padding: 16px;
+  color: white;
+  font-size: 18px;
+  box-shadow: 2px 2px 2px 2px rgba(0, 0, 0, 10%);
+  margin: 40px 40px 40px var(--right-side-leftspace);
+  width: 240px;
+}
+
+#log-in > p > a {
+  text-decoration: none;
+  color: #596D48;
+  font-weight: 700;
+}
+
+#log-in > p {
+  margin-left: var(--right-side-leftspace);
+  font-size: 18px;
 }
