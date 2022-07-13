@@ -5,8 +5,11 @@ const errorMsg = document.querySelector(".password-error");
 
 form.addEventListener("submit", e => {
   if (password.value !== confirmPassword.value) {
-    errorMsg.textContent = "* Passwords do not match";
-    password.classList.add(".error");
-    confirmPassword.classList.add(".error");
+    //Prevents the form from being submitted
+    e.preventDefault();
+
+    password.classList.add("error");
+    confirmPassword.classList.add("error")
+    errorMsg.style.display = "block";
   }
 });
